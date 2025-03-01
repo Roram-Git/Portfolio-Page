@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project</title>
+    <title>My Portfolio 🚀</title>
     <style>
         /* Basic CSS */
         body {
@@ -11,21 +11,20 @@
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
-        }
-
-        h1 {
             text-align: center;
-            color: #333;
         }
 
-        h2 {
-            color: #444;
-        }
-
-        h3 {
-            color:darkgoldenrod
-        }
-        .content {
+#copyEmail {
+    width: auto; /* Only as wide as the text inside */
+    padding: 5px 10px; /* Adjust padding */
+    font-size: 14px; /* Slightly smaller text */
+    display: inline-block; /* Prevent full width */
+}
+.robot {
+    width: 30%;  /* Set width to 30% of the parent container */
+    height: auto; /* Maintain aspect ratio */
+}
+        .container {
             width: 80%;
             margin: 20px auto;
             padding: 20px;
@@ -33,64 +32,82 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        #test {
-            color:purple
+
+        h1, h2, h3 {
+            color: #333;
         }
+
         button {
             display: block;
-            width: 100%;
+            width: 50%;
+            margin: 10px auto;
             padding: 10px;
-            margin: 20px 0;
             background-color: #4CAF50;
             color: white;
             border: none;
             font-size: 16px;
             cursor: pointer;
+            border-radius: 5px;
         }
 
         button:hover {
             background-color: #45a049;
         }
 
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to My Student Project</h1>
+    <h1>Welcome to My Portfolio 🚀</h1>
 
-    <div class="content">
-        <h2>About Me</h2>
-        <p>I am a student learning web development. This is a simple webpage with HTML, CSS, and JavaScript.</p>
-        <p>I am Rohan. My favorite color is yellow.</p>
-        <h3>Acomplishments</h3>
-        <p>I have won some writing contests.</p>
-        <!-- Button to trigger JS -->
-        <button id="changeColorButton">Click Me to Change Background Color</button>
-        <h3 id="test">Testimonials</h3>
-        <h3 id="contactme">contactme</h3>
-        <p id = "email" class = "hidden">Email: student@example.com</p>
-        <button id = "showdetails">show details</button>
-    
+    <div class="container">
+        <h2>About Me 🙋‍♂️</h2>
+        <p>Hi, I'm Rohan! I'm a 7th-grade student learning web development. 💻</p>
+        <p>My favorite color is yellow 🟡, and I love robotics 🤖 and Brawl Stars 🎮!</p>
+        <img id = robot src="images/robot.png" alt="A cool robot">
+
+        <h3>Accomplishments 🏆</h3>
+        <p>I have won some writing contests ✍️ and enjoy working on creative projects.</p>
+
+        <h3>Testimonials 💬</h3>
+        <p>"Rohan is a bright student who is passionate about coding!" 🌟</p>
+
+        <!-- Buttons for Interactivity -->
+        <button id="changeColorButton">🎨 Change Background Color</button>
+        
+        <h3>Contact Me 📧</h3>
+        <div id ='contactContainer' class="hidden">
+            <p id="location" >Santa Monica, CA</p>
+            <p id="email" >student@example.com</p>
+            <button id="copyEmail">📋 Copy </button>
+        </div>
+        <button id="toggleContact">📩 Show Contact Details</button>
     </div>
-    <script>        // Sample JavaScript
-        document.getElementById('showdetails').addEventListener('click', function() {
-            // Change the background color when the button is clicked
-            document.getElementById("email").classList.contains('hidden') ?
-             document.getElementById("email").classList.remove("hidden") :
-             document.getElementById("email").classList.add("hidden")
-            //add id to email 
-            //add id to show details
-            //add eventlistener
-            //show and hide details
-            //
-        }
-    )
-    </script>
+
     <script>
-        // Sample JavaScript
+        // Toggle background color
         document.getElementById('changeColorButton').addEventListener('click', function() {
-            // Change the background color when the button is clicked
-            document.body.style.backgroundColor = document.body.style.backgroundColor === 'red' ? 'yellow' : 'red';
+            document.body.style.backgroundColor = document.body.style.backgroundColor === 'yellow' ? '#f4f4f9' : 'yellow';
+        });
+
+        // Toggle email visibility
+        document.getElementById('toggleContact').addEventListener('click', function() {
+            let contact = document.getElementById('contactContainer');
+            contact.classList.toggle('hidden');
+            this.textContent = email.classList.contains('hidden') ? '📩 Show Contact Details' : '🙈 Hide Contact Details';
+        });
+        // Copy email to clipboard
+        document.getElementById('copyEmail').addEventListener('click', function() {
+            let emailText = document.getElementById('email').textContent.replace('Email: ', '');
+            navigator.clipboard.writeText(emailText).then(() => {
+                alert('📧 Email copied to clipboard!');
+            }).catch(err => {
+                alert('❌ Failed to copy email');
+                console.error(err);
+            });
         });
     </script>
 
