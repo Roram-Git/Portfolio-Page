@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Project</title>
+    <style>
+        /* Basic CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        h3 {
+            color:darkgoldenrod
+        }
+        .content {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #test {
+            color:purple
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Student Project</h1>
+
+    <div class="content">
+        <h2>About Me</h2>
+        <p>I am a student learning web development. This is a simple webpage with HTML, CSS, and JavaScript.</p>
+        <p>I am Rohan. My favorite color is yellow.</p>
+        <h3>Acomplishments</h3>
+        <p>I have won some writing contests.</p>
+        <!-- Button to trigger JS -->
+        <button id="changeColorButton">Click Me to Change Background Color</button>
+        <h3 id="test">Testimonials</h3>
+        <h3 id="contactme">contactme</h3>
+        <p id = "email" class = "hidden">Email: student@example.com</p>
+        <button id = "showdetails">show details</button>
+    
+    </div>
+    <script>        // Sample JavaScript
+        document.getElementById('showdetails').addEventListener('click', function() {
+            // Change the background color when the button is clicked
+            document.getElementById("email").classList.contains('hidden') ?
+             document.getElementById("email").classList.remove("hidden") :
+             document.getElementById("email").classList.add("hidden")
+            //add id to email 
+            //add id to show details
+            //add eventlistener
+            //show and hide details
+            //
+        }
+    )
+    </script>
+    <script>
+        // Sample JavaScript
+        document.getElementById('changeColorButton').addEventListener('click', function() {
+            // Change the background color when the button is clicked
+            document.body.style.backgroundColor = document.body.style.backgroundColor === 'red' ? 'yellow' : 'red';
+        });
+    </script>
+
+</body>
+</html>
